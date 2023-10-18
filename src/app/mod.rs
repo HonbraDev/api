@@ -5,7 +5,9 @@ use http::Request;
 use tower_http::trace::{DefaultOnRequest, DefaultOnResponse, TraceLayer};
 use tracing::{field, span, Level};
 
-pub fn build_app() -> Router {
+use crate::config::Config;
+
+pub fn build_app(_config: Config) -> Router {
     Router::new().nest("/yt-embed", yt_embed::router()).layer(
         TraceLayer::new_for_http()
             .make_span_with(|request: &Request<Body>| {

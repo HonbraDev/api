@@ -6,6 +6,7 @@ edition = "2021"
 [dependencies]
 axum = { version = "0.6.20", default-features = false, features = ["http1", "json", "macros", "matched-path", "tokio", "tower-log", "tracing"] }
 eyre = "0.6.8"
+figment = { version = "0.10.11", features = ["env", "toml"] }
 http = "0.2.9"
 lazy_static = "1.4.0"
 maud = { version = "0.25.0", features = ["axum"] }
