@@ -1,0 +1,20 @@
+[package]
+name = "honbra-api"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+axum = { version = "0.6.20", default-features = false, features = ["http1", "json", "macros", "matched-path", "tokio", "tower-log", "tracing"] }
+eyre = "0.6.8"
+http = "0.2.9"
+lazy_static = "1.4.0"
+maud = { version = "0.25.0", features = ["axum"] }
+moka = { version = "0.12.1", features = ["future"] }
+reqwest = { version = "0.11.22", default-features = false, features = ["json", "rustls-tls"] }
+serde = { version = "1.0.189", features = ["derive"] }
+serde_json = "1.0.107"
+serde_with = "3.3.0"
+tokio = { version = "1.33.0", features = ["rt-multi-thread", "macros"] }
+tower-http = { version = "0.4.4", features = ["trace"] }
+tracing = "0.1.37"
+tracing-subscriber = "0.3.17"
