@@ -43,7 +43,7 @@ fn main() -> eyre::Result<()> {
     debug!(addr = field::display(&config.listen_addr), "binding");
 
     rt.block_on(async move {
-        Ok::<(), eyre::Error>(
+        Ok::<_, eyre::Error>(
             axum::Server::try_bind(&config.listen_addr)
                 .context("unable to bind to server address")?
                 .serve(build_app(config).into_make_service())
